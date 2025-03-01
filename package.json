@@ -1,0 +1,14 @@
+{
+	"type": "module",
+	"dependencies": {
+		"@ai-sdk/openai": "^1.1.15",
+		"ai": "^4.1.46",
+		"dotenv": "^16.4.7"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@types/node": "^22.13.7",
+		"tsx": "^4.19.3",
+		"typescript": "^5.8.2"
+	}
+}
