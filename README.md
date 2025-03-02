@@ -16,3 +16,18 @@
 - 拥有 OpenAI 与 Anthropic 的 API key。\
     或者使用第三方中转，我的中转: https://dub.sh/howt
 
+## 使用
+1. 克隆仓库
+2. 设置 .env
+```bash
+cp .env.example .env
+```
+然后修改其中的 API key
+3. 安装依赖
+```bash
+pnpm install
+```
+4. 运行
+```bash
+pnpm tsx src/01-generate-text/main.ts
+```
