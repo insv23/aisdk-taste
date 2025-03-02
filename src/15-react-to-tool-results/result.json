@@ -1,0 +1,401 @@
+{
+	"rawSteps": [
+		{
+			"stepType": "initial",
+			"text": "",
+			"reasoningDetails": [],
+			"sources": [],
+			"toolCalls": [
+				{
+					"type": "tool-call",
+					"toolCallId": "call_RZ4lplezkiV3jr7pT7GW1kWt",
+					"toolName": "getLatLon",
+					"args": {
+						"city": "Beijing"
+					}
+				}
+			],
+			"toolResults": [
+				{
+					"type": "tool-result",
+					"toolCallId": "call_RZ4lplezkiV3jr7pT7GW1kWt",
+					"toolName": "getLatLon",
+					"args": {
+						"city": "Beijing"
+					},
+					"result": {
+						"lat": 39.9042,
+						"lon": 116.4074
+					}
+				}
+			],
+			"finishReason": "tool-calls",
+			"usage": {
+				"promptTokens": 263,
+				"completionTokens": 16,
+				"totalTokens": 279
+			},
+			"warnings": [],
+			"request": {
+				"body": "{\"model\":\"gpt-4o-mini\",\"temperature\":0,\"messages\":[{\"role\":\"system\",\"content\":\"你是一个天气助手， 能够帮助用户查询各个城市的天气情况。\\n    处理用户的天气查询请求时，请遵循以下步骤：\\n    1. 从用户输入中识别出城市名称\\n    2. 使用 getLatLon 工具获取该城市的经纬度坐标\\n    3. 使用返回的坐标调用 getWeatherByLatLon 工具获取天气信息\\n    4. 向用户提供一个友好的天气报告，包括温度和天气状况\\n    \\n    如果用户使用非英文查询城市天气（如中文、日文等），请正确提取城市名称并使用英文名称调用工具。\\n    例如：\\\"北京天气怎么样\\\" → 提取城市名\\\"北京\\\"，使用英文名\\\"Beijing\\\"调用工具。\"},{\"role\":\"user\",\"content\":\"北京天气怎么样\"}],\"tools\":[{\"type\":\"function\",\"function\":{\"name\":\"getLatLon\",\"description\":\"Retrieves the latitude and longitude for a given city.\",\"parameters\":{\"type\":\"object\",\"properties\":{\"city\":{\"type\":\"string\",\"description\":\"The English name of the city\"}},\"required\":[\"city\"],\"additionalProperties\":false,\"$schema\":\"http://json-schema.org/draft-07/schema#\"}}},{\"type\":\"function\",\"function\":{\"name\":\"getWeatherByLatLon\",\"description\":\"Retrieves the weather information for the given latitude and longitude coordinates.\",\"parameters\":{\"type\":\"object\",\"properties\":{\"lat\":{\"type\":\"number\",\"description\":\"The latitude\"},\"lon\":{\"type\":\"number\",\"description\":\"The longitude\"}},\"required\":[\"lat\",\"lon\"],\"additionalProperties\":false,\"$schema\":\"http://json-schema.org/draft-07/schema#\"}}}],\"tool_choice\":\"auto\"}"
+			},
+			"response": {
+				"id": "chatcmpl-B6TezLA2tTNWXAU42M23Qu0J4JKcd",
+				"timestamp": "2025-03-02T02:48:01.000Z",
+				"modelId": "gpt-4o-mini",
+				"headers": {
+					"access-control-allow-credentials": "true",
+					"access-control-allow-headers": "*",
+					"access-control-allow-methods": "GET,POST,PUT,DELETE,OPTIONS",
+					"access-control-allow-origin": "*",
+					"alt-svc": "h3=\":8443\"; ma=2592000",
+					"cache-control": "max-age=60, no-cache",
+					"content-length": "1019",
+					"content-type": "application/json",
+					"date": "Sun, 02 Mar 2025 02:48:11 GMT",
+					"expires": "Sun, 02 Mar 2025 02:49:11 GMT",
+					"server": "nginx",
+					"vary": "Accept-Encoding",
+					"x-oneapi-request-id": "20250302024801293228585dulh8WuF",
+					"x-rixapi-request-id": "20250302104801291769917MgLwfaRu"
+				},
+				"messages": [
+					{
+						"role": "assistant",
+						"content": [
+							{
+								"type": "text",
+								"text": ""
+							},
+							{
+								"type": "tool-call",
+								"toolCallId": "call_RZ4lplezkiV3jr7pT7GW1kWt",
+								"toolName": "getLatLon",
+								"args": {
+									"city": "Beijing"
+								}
+							}
+						],
+						"id": "msg-8CtGceoiyjaipKS4LvpJDoBl"
+					},
+					{
+						"role": "tool",
+						"id": "msg-dqqrQF0wFyWgHuUKppZr19Iy",
+						"content": [
+							{
+								"type": "tool-result",
+								"toolCallId": "call_RZ4lplezkiV3jr7pT7GW1kWt",
+								"toolName": "getLatLon",
+								"result": {
+									"lat": 39.9042,
+									"lon": 116.4074
+								}
+							}
+						]
+					}
+				]
+			},
+			"providerMetadata": {
+				"openai": {
+					"reasoningTokens": 0,
+					"acceptedPredictionTokens": 0,
+					"rejectedPredictionTokens": 0,
+					"cachedPromptTokens": 0
+				}
+			},
+			"experimental_providerMetadata": {
+				"openai": {
+					"reasoningTokens": 0,
+					"acceptedPredictionTokens": 0,
+					"rejectedPredictionTokens": 0,
+					"cachedPromptTokens": 0
+				}
+			},
+			"isContinued": false
+		},
+		{
+			"stepType": "tool-result",
+			"text": "",
+			"reasoningDetails": [],
+			"sources": [],
+			"toolCalls": [
+				{
+					"type": "tool-call",
+					"toolCallId": "call_ILPFxEalTplPlOsbzQjwcmVO",
+					"toolName": "getWeatherByLatLon",
+					"args": {
+						"lat": 39.9042,
+						"lon": 116.4074
+					}
+				}
+			],
+			"toolResults": [
+				{
+					"type": "tool-result",
+					"toolCallId": "call_ILPFxEalTplPlOsbzQjwcmVO",
+					"toolName": "getWeatherByLatLon",
+					"args": {
+						"lat": 39.9042,
+						"lon": 116.4074
+					},
+					"result": {
+						"temperature": 20,
+						"condition": "Cloudy"
+					}
+				}
+			],
+			"finishReason": "tool-calls",
+			"usage": {
+				"promptTokens": 303,
+				"completionTokens": 27,
+				"totalTokens": 330
+			},
+			"warnings": [],
+			"request": {
+				"body": "{\"model\":\"gpt-4o-mini\",\"temperature\":0,\"messages\":[{\"role\":\"system\",\"content\":\"你是一个天气助手， 能够帮助用户查询各个城市的天气情况。\\n    处理用户的天气查询请求时，请遵循以下步骤：\\n    1. 从用户输入中识别出城市名称\\n    2. 使用 getLatLon 工具获取该城市的经纬度坐标\\n    3. 使用返回的坐标调用 getWeatherByLatLon 工具获取天气信息\\n    4. 向用户提供一个友好的天气报告，包括温度和天气状况\\n    \\n    如果用户使用非英文查询城市天气（如中文、日文等），请正确提取城市名称并使用英文名称调用工具。\\n    例如：\\\"北京天气怎么样\\\" → 提取城市名\\\"北京\\\"，使用英文名\\\"Beijing\\\"调用工具。\"},{\"role\":\"user\",\"content\":\"北京天气怎么样\"},{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"id\":\"call_RZ4lplezkiV3jr7pT7GW1kWt\",\"type\":\"function\",\"function\":{\"name\":\"getLatLon\",\"arguments\":\"{\\\"city\\\":\\\"Beijing\\\"}\"}}]},{\"role\":\"tool\",\"tool_call_id\":\"call_RZ4lplezkiV3jr7pT7GW1kWt\",\"content\":\"{\\\"lat\\\":39.9042,\\\"lon\\\":116.4074}\"}],\"tools\":[{\"type\":\"function\",\"function\":{\"name\":\"getLatLon\",\"description\":\"Retrieves the latitude and longitude for a given city.\",\"parameters\":{\"type\":\"object\",\"properties\":{\"city\":{\"type\":\"string\",\"description\":\"The English name of the city\"}},\"required\":[\"city\"],\"additionalProperties\":false,\"$schema\":\"http://json-schema.org/draft-07/schema#\"}}},{\"type\":\"function\",\"function\":{\"name\":\"getWeatherByLatLon\",\"description\":\"Retrieves the weather information for the given latitude and longitude coordinates.\",\"parameters\":{\"type\":\"object\",\"properties\":{\"lat\":{\"type\":\"number\",\"description\":\"The latitude\"},\"lon\":{\"type\":\"number\",\"description\":\"The longitude\"}},\"required\":[\"lat\",\"lon\"],\"additionalProperties\":false,\"$schema\":\"http://json-schema.org/draft-07/schema#\"}}}],\"tool_choice\":\"auto\"}"
+			},
+			"response": {
+				"id": "chatcmpl-B6Tf0qX8qZkhegG4CQqxs4l0EALIk",
+				"timestamp": "2025-03-02T02:48:02.000Z",
+				"modelId": "gpt-4o-mini",
+				"headers": {
+					"access-control-allow-credentials": "true",
+					"access-control-allow-headers": "*",
+					"access-control-allow-methods": "GET,POST,PUT,DELETE,OPTIONS",
+					"access-control-allow-origin": "*",
+					"alt-svc": "h3=\":8443\"; ma=2592000",
+					"cache-control": "max-age=60, no-cache",
+					"content-length": "1040",
+					"content-type": "application/json",
+					"date": "Sun, 02 Mar 2025 02:48:13 GMT",
+					"expires": "Sun, 02 Mar 2025 02:49:13 GMT",
+					"server": "nginx",
+					"vary": "Accept-Encoding",
+					"x-oneapi-request-id": "20250302024802773294841i9I5c8gf",
+					"x-rixapi-request-id": "20250302104802772183674PcdnLhi7"
+				},
+				"messages": [
+					{
+						"role": "assistant",
+						"content": [
+							{
+								"type": "text",
+								"text": ""
+							},
+							{
+								"type": "tool-call",
+								"toolCallId": "call_RZ4lplezkiV3jr7pT7GW1kWt",
+								"toolName": "getLatLon",
+								"args": {
+									"city": "Beijing"
+								}
+							}
+						],
+						"id": "msg-8CtGceoiyjaipKS4LvpJDoBl"
+					},
+					{
+						"role": "tool",
+						"id": "msg-dqqrQF0wFyWgHuUKppZr19Iy",
+						"content": [
+							{
+								"type": "tool-result",
+								"toolCallId": "call_RZ4lplezkiV3jr7pT7GW1kWt",
+								"toolName": "getLatLon",
+								"result": {
+									"lat": 39.9042,
+									"lon": 116.4074
+								}
+							}
+						]
+					},
+					{
+						"role": "assistant",
+						"content": [
+							{
+								"type": "text",
+								"text": ""
+							},
+							{
+								"type": "tool-call",
+								"toolCallId": "call_ILPFxEalTplPlOsbzQjwcmVO",
+								"toolName": "getWeatherByLatLon",
+								"args": {
+									"lat": 39.9042,
+									"lon": 116.4074
+								}
+							}
+						],
+						"id": "msg-b3V2ITyBW2AKy1yg75J58gsj"
+					},
+					{
+						"role": "tool",
+						"id": "msg-lAbjeHWqM1oIK0Td7lQlPjn2",
+						"content": [
+							{
+								"type": "tool-result",
+								"toolCallId": "call_ILPFxEalTplPlOsbzQjwcmVO",
+								"toolName": "getWeatherByLatLon",
+								"result": {
+									"temperature": 20,
+									"condition": "Cloudy"
+								}
+							}
+						]
+					}
+				]
+			},
+			"providerMetadata": {
+				"openai": {
+					"reasoningTokens": 0,
+					"acceptedPredictionTokens": 0,
+					"rejectedPredictionTokens": 0,
+					"cachedPromptTokens": 0
+				}
+			},
+			"experimental_providerMetadata": {
+				"openai": {
+					"reasoningTokens": 0,
+					"acceptedPredictionTokens": 0,
+					"rejectedPredictionTokens": 0,
+					"cachedPromptTokens": 0
+				}
+			},
+			"isContinued": false
+		},
+		{
+			"stepType": "tool-result",
+			"text": "今天在北京的天气是：温度20°C，天气状况为多云。希望你有美好的一天！",
+			"reasoningDetails": [],
+			"sources": [],
+			"toolCalls": [],
+			"toolResults": [],
+			"finishReason": "stop",
+			"usage": {
+				"promptTokens": 351,
+				"completionTokens": 28,
+				"totalTokens": 379
+			},
+			"warnings": [],
+			"request": {
+				"body": "{\"model\":\"gpt-4o-mini\",\"temperature\":0,\"messages\":[{\"role\":\"system\",\"content\":\"你是一个天气助手， 能够帮助用户查询各个城市的天气情况。\\n    处理用户的天气查询请求时，请遵循以下步骤：\\n    1. 从用户输入中识别出城市名称\\n    2. 使用 getLatLon 工具获取该城市的经纬度坐标\\n    3. 使用返回的坐标调用 getWeatherByLatLon 工具获取天气信息\\n    4. 向用户提供一个友好的天气报告，包括温度和天气状况\\n    \\n    如果用户使用非英文查询城市天气（如中文、日文等），请正确提取城市名称并使用英文名称调用工具。\\n    例如：\\\"北京天气怎么样\\\" → 提取城市名\\\"北京\\\"，使用英文名\\\"Beijing\\\"调用工具。\"},{\"role\":\"user\",\"content\":\"北京天气怎么样\"},{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"id\":\"call_RZ4lplezkiV3jr7pT7GW1kWt\",\"type\":\"function\",\"function\":{\"name\":\"getLatLon\",\"arguments\":\"{\\\"city\\\":\\\"Beijing\\\"}\"}}]},{\"role\":\"tool\",\"tool_call_id\":\"call_RZ4lplezkiV3jr7pT7GW1kWt\",\"content\":\"{\\\"lat\\\":39.9042,\\\"lon\\\":116.4074}\"},{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"id\":\"call_ILPFxEalTplPlOsbzQjwcmVO\",\"type\":\"function\",\"function\":{\"name\":\"getWeatherByLatLon\",\"arguments\":\"{\\\"lat\\\":39.9042,\\\"lon\\\":116.4074}\"}}]},{\"role\":\"tool\",\"tool_call_id\":\"call_ILPFxEalTplPlOsbzQjwcmVO\",\"content\":\"{\\\"temperature\\\":20,\\\"condition\\\":\\\"Cloudy\\\"}\"}],\"tools\":[{\"type\":\"function\",\"function\":{\"name\":\"getLatLon\",\"description\":\"Retrieves the latitude and longitude for a given city.\",\"parameters\":{\"type\":\"object\",\"properties\":{\"city\":{\"type\":\"string\",\"description\":\"The English name of the city\"}},\"required\":[\"city\"],\"additionalProperties\":false,\"$schema\":\"http://json-schema.org/draft-07/schema#\"}}},{\"type\":\"function\",\"function\":{\"name\":\"getWeatherByLatLon\",\"description\":\"Retrieves the weather information for the given latitude and longitude coordinates.\",\"parameters\":{\"type\":\"object\",\"properties\":{\"lat\":{\"type\":\"number\",\"description\":\"The latitude\"},\"lon\":{\"type\":\"number\",\"description\":\"The longitude\"}},\"required\":[\"lat\",\"lon\"],\"additionalProperties\":false,\"$schema\":\"http://json-schema.org/draft-07/schema#\"}}}],\"tool_choice\":\"auto\"}"
+			},
+			"response": {
+				"id": "chatcmpl-B6Tf2JsecfxcjWA20To3FQFcIb1MO",
+				"timestamp": "2025-03-02T02:48:04.000Z",
+				"modelId": "gpt-4o-mini",
+				"headers": {
+					"access-control-allow-credentials": "true",
+					"access-control-allow-headers": "*",
+					"access-control-allow-methods": "GET,POST,PUT,DELETE,OPTIONS",
+					"access-control-allow-origin": "*",
+					"alt-svc": "h3=\":8443\"; ma=2592000",
+					"cache-control": "max-age=60, no-cache",
+					"content-length": "840",
+					"content-type": "application/json",
+					"date": "Sun, 02 Mar 2025 02:48:15 GMT",
+					"expires": "Sun, 02 Mar 2025 02:49:15 GMT",
+					"server": "nginx",
+					"x-oneapi-request-id": "20250302024804557613626Jt63ENXz",
+					"x-rixapi-request-id": "20250302104804556474737cZ2wGa8D"
+				},
+				"messages": [
+					{
+						"role": "assistant",
+						"content": [
+							{
+								"type": "text",
+								"text": ""
+							},
+							{
+								"type": "tool-call",
+								"toolCallId": "call_RZ4lplezkiV3jr7pT7GW1kWt",
+								"toolName": "getLatLon",
+								"args": {
+									"city": "Beijing"
+								}
+							}
+						],
+						"id": "msg-8CtGceoiyjaipKS4LvpJDoBl"
+					},
+					{
+						"role": "tool",
+						"id": "msg-dqqrQF0wFyWgHuUKppZr19Iy",
+						"content": [
+							{
+								"type": "tool-result",
+								"toolCallId": "call_RZ4lplezkiV3jr7pT7GW1kWt",
+								"toolName": "getLatLon",
+								"result": {
+									"lat": 39.9042,
+									"lon": 116.4074
+								}
+							}
+						]
+					},
+					{
+						"role": "assistant",
+						"content": [
+							{
+								"type": "text",
+								"text": ""
+							},
+							{
+								"type": "tool-call",
+								"toolCallId": "call_ILPFxEalTplPlOsbzQjwcmVO",
+								"toolName": "getWeatherByLatLon",
+								"args": {
+									"lat": 39.9042,
+									"lon": 116.4074
+								}
+							}
+						],
+						"id": "msg-b3V2ITyBW2AKy1yg75J58gsj"
+					},
+					{
+						"role": "tool",
+						"id": "msg-lAbjeHWqM1oIK0Td7lQlPjn2",
+						"content": [
+							{
+								"type": "tool-result",
+								"toolCallId": "call_ILPFxEalTplPlOsbzQjwcmVO",
+								"toolName": "getWeatherByLatLon",
+								"result": {
+									"temperature": 20,
+									"condition": "Cloudy"
+								}
+							}
+						]
+					},
+					{
+						"role": "assistant",
+						"content": [
+							{
+								"type": "text",
+								"text": "今天在北京的天气是：温度20°C，天气状况为多云。希望你有美好的一天！"
+							}
+						],
+						"id": "msg-gV67PuW2fKSWyn8DaoppPGEY"
+					}
+				]
+			},
+			"providerMetadata": {
+				"openai": {
+					"reasoningTokens": 0,
+					"acceptedPredictionTokens": 0,
+					"rejectedPredictionTokens": 0,
+					"cachedPromptTokens": 0
+				}
+			},
+			"experimental_providerMetadata": {
+				"openai": {
+					"reasoningTokens": 0,
+					"acceptedPredictionTokens": 0,
+					"rejectedPredictionTokens": 0,
+					"cachedPromptTokens": 0
+				}
+			},
+			"isContinued": false
+		}
+	],
+	"finalResponse": "今天在北京的天气是：温度20°C，天气状况为多云。希望你有美好的一天！"
+}
